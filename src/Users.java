@@ -60,7 +60,7 @@ public class Users {
         else return user;
 
     }
-    public boolean regist (String name,String neptun , String stat, String pw)
+    /*public boolean regist (String name,String neptun , String stat, String pw)
     {
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/progtech", "root", "");
@@ -94,7 +94,7 @@ public class Users {
         }
 
         return true;
-    }
+    }*/
 
     @Override
     public String toString() {

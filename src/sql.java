@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class sql {
-    int getMaxid(String tabe)
+    /*int getMaxid(String tabe)
     {
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/progtech", "root", "");
@@ -22,5 +22,5 @@ public class sql {
             e.printStackTrace();
         }
         return 999999;
-    }
+    }*/
 }

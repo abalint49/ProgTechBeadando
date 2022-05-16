@@ -15,12 +15,12 @@ public class main {
         /*users.RefressUser();
         System.out.println(users.toString());*/
 
-        /*Login("A49I6H","1234");
-        System.out.println(CurrentUser.toString());*/
+        Login("A49I6H","1234");
+        System.out.println(CurrentUser.toString());
 
-        System.out.println(Sql.getMaxid("users"));
+        //System.out.println(Sql.getMaxid("users"));
 
-        users.regist("kjke","njkd","student","1234");
+        //users.regist("kjke","njkd","student","1234");
 
 
     }
