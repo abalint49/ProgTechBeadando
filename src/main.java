@@ -15,8 +15,10 @@ public class main {
         /*users.RefressUser();
         System.out.println(users.toString());*/
 
-        Login("A49I6H","1234");
-        System.out.println(CurrentUser.toString());
+        //Login("A49I6H","1234");
+        LogInForm l = new LogInForm();
+        //l.setVisible(true);
+        //System.out.println(CurrentUser.toString());
 
         //System.out.println(Sql.getMaxid("users"));
 
@@ -28,5 +30,6 @@ public class main {
     static void Login(String neptun , String pw)
     {
         CurrentUser = users.login(neptun, pw);
+        System.out.println(main.CurrentUser.toString());
     }
 }
