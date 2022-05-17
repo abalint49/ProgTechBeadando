@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Máj 17. 13:41
+-- Létrehozás ideje: 2022. Máj 17. 18:30
 -- Kiszolgáló verziója: 10.4.22-MariaDB
 -- PHP verzió: 8.0.13
 
@@ -29,10 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `lessons` (
   `id` smallint(5) UNSIGNED NOT NULL,
+  `TeacherId` int(11) NOT NULL,
   `LessonName` varchar(255) DEFAULT NULL,
   `location` varchar(255) DEFAULT NULL,
   `time` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- A tábla adatainak kiíratása `lessons`
+--
+
+INSERT INTO `lessons` (`id`, `TeacherId`, `LessonName`, `location`, `time`) VALUES
+(2, 2, '[value-3]', '[value-4]', '[value-5]'),
+(3, 2, '[value-3]', '[value-4]', '[value-5]');
 
 -- --------------------------------------------------------
 
@@ -43,17 +52,6 @@ CREATE TABLE `lessons` (
 CREATE TABLE `studenttolesson` (
   `studentid` int(11) DEFAULT NULL,
   `lessonsid` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Tábla szerkezet ehhez a táblához `teachertolesson`
---
-
-CREATE TABLE `teachertolesson` (
-  `lessonsid` int(11) DEFAULT NULL,
-  `techerid` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -101,13 +99,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT a táblához `lessons`
 --
 ALTER TABLE `lessons`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT a táblához `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
