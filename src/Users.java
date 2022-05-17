@@ -71,6 +71,26 @@ public class Users {
         Sql.sqlWithoutResponse(sql);
     }
 
+    public String GetUserFromId(int id)
+    {
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/progtech", "root", "");
+            Statement statement = connection.createStatement();
+            String sql = "select `Name` from users where id = " + id;
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while (resultSet.next())
+            {
+                return resultSet.getString(1);
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         String output = "";

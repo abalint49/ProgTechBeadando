@@ -10,10 +10,18 @@ public class main {
 
     static public Users users = new Users();
 
+    static public Lessons lessons = new Lessons();
+
     public static void main(String args[])
     {
         /*users.RefressUser();
         System.out.println(users.toString());*/
+
+        lessons.RefressLessons();
+        //System.out.println(lessons.toString());
+
+        ArrayList<String> out = lessons.LessonsToStringList();
+
 
         //Login("A49I6H","1234");
 
