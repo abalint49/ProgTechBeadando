@@ -60,6 +60,17 @@ public class Lessons {
         Sql.sqlWithoutResponse(sql);
     }
 
+    public void UppdataLesson (int id, String lessonName, String location , String time)
+    {
+        String sql = ("UPDATE `lessons` SET `LessonName`='" + lessonName + "',`location`='" + location + "',`time`='" + time + "' WHERE `id` = " + id + "");
+        Sql.sqlWithoutResponse(sql);
+    }
+    public void DeleteLesson (int id)
+    {
+        String sql = ("DELETE FROM `lessons` WHERE `id` = " + id + "");
+        Sql.sqlWithoutResponse(sql);
+    }
+
 
     @Override
     public String toString() {
@@ -68,7 +79,7 @@ public class Lessons {
         for (int i = 0; i < lessons.size(); i++) {
             lesson lesson = lessons.get(i);
             output = output + "id=" + lesson.id +
-                    ", teacherId=" + users.GetUserFromId(lesson.teacherId) +
+                    ", teacherName=" + users.GetUserFromId(lesson.teacherId) +
                     ", tessonName='" + lesson.tessonName +
                     ", location='" + lesson.location +
                     ", time='" + lesson.time + "\n";
