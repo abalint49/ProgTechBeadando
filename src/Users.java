@@ -9,8 +9,6 @@ import java.util.List;
 public class Users {
     private List<user> users = new ArrayList<>();
 
-    static sql Sql;
-
     public void RefressUser()
     {
         try {
@@ -60,41 +58,29 @@ public class Users {
         else return user;
 
     }
-    /*public boolean regist (String name,String neptun , String stat, String pw)
+    public void regist (String name,String neptun , int stat, String pw)
     {
+        if (users.contains(neptun))
+        {
+            return;
+        }
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/progtech", "root", "");
             Statement statement = connection.createStatement();
-            String sql = "select * from users where NaptunKod = '" + neptun + "'";
-            ResultSet resultSet = statement.executeQuery(sql);
+            String sql = ("INSERT INTO `users`(`NaptunKod`, `Name`, `status`, `pw`) VALUES  ('"+ neptun + "','"+ name + "','" + stat + "','" + pw + "')");
+            //statement.executeQuery(sql);
+            statement.execute(sql);
 
-            while (resultSet.next())
+            /*while (resultSet.next())
             {
-                return resultSet.getString("id") != null;
-            }
+
+            }*/
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/progtech", "root", "");
-            Statement statement = connection.createStatement();
-            String sql = String.format("INSERT INTO `users`(`id`, `NaptunKod`, `Name`, `status`, `pw`) VALUES  ({0},'{1}','{2}','{3}','{4}')",Sql.getMaxid("users")+1,neptun,name,stat,pw);
-            ResultSet resultSet = statement.executeQuery(sql);
-
-            while (resultSet.next())
-            {
-                return true;
-            }
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-
-        return true;
-    }*/
+    }
 
     @Override
     public String toString() {

@@ -7,20 +7,20 @@ public class main {
 
     static user CurrentUser = new user();
 
-    static Users users = new Users();
-    static sql Sql;
-
+    static public Users users = new Users();
     public static void main(String args[])
     {
         /*users.RefressUser();
         System.out.println(users.toString());*/
 
         //Login("A49I6H","1234");
-        LogInForm l = new LogInForm();
+
+        //LogInForm l = new LogInForm();
+
+        //users.regist("jjgld", "neptun", 0, "pw");
+
         //l.setVisible(true);
         //System.out.println(CurrentUser.toString());
-
-        //System.out.println(Sql.getMaxid("users"));
 
         //users.regist("kjke","njkd","student","1234");
 
@@ -31,5 +31,12 @@ public class main {
     {
         CurrentUser = users.login(neptun, pw);
         System.out.println(main.CurrentUser.toString());
+    }
+
+    static void Registration(String name,String neptun , int stat, String pw)
+    {
+        users.RefressUser();
+        users.regist(name, neptun, stat, pw);
+        users.RefressUser();
     }
 }
