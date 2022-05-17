@@ -14,18 +14,18 @@ public class main {
 
     public static void main(String args[])
     {
-        /*users.RefressUser();
-        System.out.println(users.toString());*/
+        users.RefressUser();
+        //System.out.println(users.toString());
 
-        //lessons.RefressLessons();
+        lessons.RefressLessons();
         //System.out.println(lessons.toString());
 
-        //ArrayList<String> out = lessons.LessonsToStringList();
-
+        ArrayList<String> LessonList = lessons.LessonsToStringList();
+        System.out.println(LessonList);
 
         //Login("A49I6H","1234");
 
-        //LogInForm l = new LogInForm();
+        LogInForm l = new LogInForm();
 
         //l.setVisible(true);
         //System.out.println(CurrentUser.toString());

@@ -14,8 +14,14 @@ public class LogInForm extends JFrame {
         setSize(450,300);
         setContentPane(loginPanel);
         setVisible(true);
-        LoginButton.addActionListener(e -> main.Login(LoginNeptunBox.getText(),String.valueOf(LoginJelszoBox.getPassword())));
-
+        LoginButton.addActionListener(e ->
+                {
+                    main.Login(LoginNeptunBox.getText(), String.valueOf(LoginJelszoBox.getPassword()));
+                    switch (main.CurrentUser.state) {
+                        case "1":
+                            TeacherForm t = new TeacherForm();
+                    }
+                });
         LoginRegGomb.addActionListener(e -> {RegForm r = new RegForm();});
     }
 }
