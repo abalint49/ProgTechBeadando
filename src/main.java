@@ -15,7 +15,7 @@ public class main {
 
         //Login("A49I6H","1234");
 
-        //LogInForm l = new LogInForm();
+        LogInForm l = new LogInForm();
 
         //users.regist("jjgld", "neptun", 0, "pw");
 
@@ -38,5 +38,6 @@ public class main {
         users.RefressUser();
         users.regist(name, neptun, stat, pw);
         users.RefressUser();
+        Login(neptun, pw);
     }
 }
