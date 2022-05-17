@@ -50,6 +50,16 @@ public class Lessons {
         return out;
     }
 
+    public void AddLesson (lesson lesson)
+    {
+        if (lesson == null)
+        {
+            return;
+        }
+        String sql = ("INSERT INTO `lessons`(`TeacherId`, `LessonName`, `location`, `time`) VALUES (" + lesson.teacherId + ",'" + lesson.tessonName + "','" + lesson.location + "','" + lesson.time + "')");
+        Sql.sqlWithoutResponse(sql);
+    }
+
 
     @Override
     public String toString() {
