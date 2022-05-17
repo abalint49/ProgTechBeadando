@@ -7,7 +7,7 @@ public class RegForm extends JFrame{
     private JPasswordField RegJelszoBox;
     private JTextField RegNeptunBox;
     private JButton RegButton;
-    private JCheckBox TanarCheck;
+    private JComboBox StateCombobox;
 
     public RegForm(){
         setTitle("Regisztráció");
