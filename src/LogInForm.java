@@ -1,12 +1,13 @@
-import com.mysql.cj.log.Log;
-
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class LogInForm extends JFrame {
     private JPasswordField LoginJelszoBox;
     private JTextField LoginNeptunBox;
     private JButton LoginButton;
     private JPanel loginPanel;
+    private JButton LoginRegGomb;
 
     public LogInForm() {
         setTitle("Bejelentkezés");
@@ -15,5 +16,6 @@ public class LogInForm extends JFrame {
         setVisible(true);
         LoginButton.addActionListener(e -> main.Login(LoginNeptunBox.getText(),String.valueOf(LoginJelszoBox.getPassword())));
 
+        LoginRegGomb.addActionListener(e -> {RegForm r = new RegForm();});
     }
 }
