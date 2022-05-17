@@ -8,6 +8,7 @@ public class RegForm extends JFrame{
     private JTextField RegNeptunBox;
     private JButton RegButton;
     private JComboBox StateCombobox;
+    private JTextField RegNevBox;
 
     public RegForm(){
         setTitle("Regisztráció");
