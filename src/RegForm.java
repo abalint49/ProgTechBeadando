@@ -18,11 +18,12 @@ public class RegForm extends JFrame{
 
 
         // gombkattintásra regisztrálást és feldobandó "sikeres regisztráció!" feliratot ide
-        RegButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
+        //RegButton.addActionListener(e -> main.Registration(RegNevBox.getText(), RegNeptunBox.getText(), StateCombobox.getSelectedIndex(), String.valueOf(RegJelszoBox.getPassword())));
+        RegButton.addActionListener(e -> {
+            main.Registration(RegNevBox.getText(), RegNeptunBox.getText(), StateCombobox.getSelectedIndex(), String.valueOf(RegJelszoBox.getPassword()));
+            JOptionPane.showMessageDialog(null, "Sikeres regisztráció!", "Siker",JOptionPane.WARNING_MESSAGE);
+            setVisible(false);
+            dispose();
         });
     }
 }
