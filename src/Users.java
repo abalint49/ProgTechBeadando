@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Users {
+
+    private sql Sql = new sql();
+
     private List<user> users = new ArrayList<>();
 
     public void RefressUser()
@@ -17,7 +20,7 @@ public class Users {
             ResultSet resultSet = statement.executeQuery("select * from users");
             while (resultSet.next())
             {
-                int id = Integer.parseInt(resultSet.getString("id"));
+                int id = resultSet.getInt("id");
                 String name = resultSet.getString("Name");
                 String neptunK = resultSet.getString("NaptunKod");
                 String state = resultSet.getString("status");
@@ -64,22 +67,8 @@ public class Users {
         {
             return;
         }
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/progtech", "root", "");
-            Statement statement = connection.createStatement();
-            String sql = ("INSERT INTO `users`(`NaptunKod`, `Name`, `status`, `pw`) VALUES  ('"+ neptun + "','"+ name + "','" + stat + "','" + pw + "')");
-            //statement.executeQuery(sql);
-            statement.execute(sql);
-
-            /*while (resultSet.next())
-            {
-
-            }*/
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
+        String sql = ("INSERT INTO `users`(`NaptunKod`, `Name`, `status`, `pw`) VALUES  ('"+ neptun + "','"+ name + "','" + stat + "','" + pw + "')");
+        Sql.sqlWithoutResponse(sql);
     }
 
     @Override

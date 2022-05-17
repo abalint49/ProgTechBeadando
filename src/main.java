@@ -2,12 +2,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class main {
 
     static user CurrentUser = new user();
 
     static public Users users = new Users();
+
     public static void main(String args[])
     {
         /*users.RefressUser();
@@ -17,14 +19,10 @@ public class main {
 
         LogInForm l = new LogInForm();
 
-        //users.regist("jjgld", "neptun", 0, "pw");
-
         //l.setVisible(true);
         //System.out.println(CurrentUser.toString());
 
-        //users.regist("kjke","njkd","student","1234");
-
-
+        //users.regist("kjke","njkd",0,"1234");
     }
 
     static void Login(String neptun , String pw)
