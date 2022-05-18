@@ -27,6 +27,7 @@ public class HelloApplication extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
+
     }
 
     public static void main(String[] args) {
@@ -41,7 +42,7 @@ public class HelloApplication extends Application {
         ArrayList<String> LessonList = lessons.LessonsToStringList();
         System.out.println(LessonList);
 
-        //Login("A49I6H","1234");
+        Login("A49I6H","1234");
 
         //LogInForm l = new LogInForm();
 
@@ -59,7 +60,7 @@ public class HelloApplication extends Application {
         CurrentUser = users.login(neptun, pw);
         System.out.println(CurrentUser.toString());
     }
-    static void Registration(String name,String neptun , int stat, String pw)
+    static void Registration(String name,String neptun, int stat, String pw)
     {
         users.RefressUser();
         users.regist(name, neptun, stat, pw);
