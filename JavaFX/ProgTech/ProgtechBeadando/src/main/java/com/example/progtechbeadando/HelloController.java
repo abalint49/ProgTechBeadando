@@ -12,7 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
+import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -21,12 +21,7 @@ public class HelloController {
 
     public PasswordField LoginJelszoBox;
     public TextField LoginNeptunBox;
-    public static PasswordField RegJelszoBox;
-    public static TextField RegNevBox;
-    public static TextField RegNeptunBox;
-    //public static Button RegButton;
-    //public static Label Message;
-    //public static ToggleGroup RegGroup;
+
 
     public static Parent root;
 
@@ -65,10 +60,6 @@ public class HelloController {
 
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
-
-
-
-
     }
 
 

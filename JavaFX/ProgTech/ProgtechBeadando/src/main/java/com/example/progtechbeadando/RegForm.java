@@ -1,6 +1,7 @@
 package com.example.progtechbeadando;
 
 import javafx.application.Application;
+import javafx.scene.control.TextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,12 +17,16 @@ public class RegForm extends Application {
    /*     HelloController.StateComboBox.getItems().removeAll(HelloController.StateComboBox.getItems());
     HelloController.StateComboBox.getItems().addAll("Option A","Option B","Option C");*/
    @FXML
-
-   public static PasswordField RegJelszoBox = new PasswordField();
-   public static TextField RegNevBox = new TextField();
-   public static TextField RegNeptunBox = new TextField();
+   private PasswordField RegJelszoBox = new PasswordField();
+   @FXML
+   private TextField RegNevBox = new TextField();
+   @FXML
+   private TextField RegNeptunBox = new TextField();
+   @FXML
    public static Button RegButton;
+   @FXML
    public static Label Message = new Label();
+   @FXML
    public static ToggleGroup RegGroup = new ToggleGroup();
    public RadioButton R1 = new RadioButton();
    public RadioButton R2 = new RadioButton();
@@ -64,31 +69,28 @@ public class RegForm extends Application {
       /*ObservableList<String> list = FXCollections.observableArrayList("Diák","Tanár","Admin") ;
       HelloController.StateComboBox.setItems(list);*/
 
-      stage.setTitle("Hello!");
+      /*stage.setTitle("Hello!");
       stage.setScene(scene);
       stage.initModality(Modality.APPLICATION_MODAL);
-      stage.show();
+      stage.show();*/
    }
 
 
    public void RegButtonClick(ActionEvent actionEvent) {
-      //Cannot invoke "javafx.scene.control.ToggleGroup.getSelectedToggle()" because "com.example.progtechbeadando.RegForm.RegGroup" is null
-
       int stateIndex = 0;
-
       if (R1.isSelected()) stateIndex=0;
       if (R2.isSelected()) stateIndex=1;
       if (R3.isSelected()) stateIndex=2;
 
-      /*switch (RegGroup.getSelectedToggle().toString())
-      {
-         case "Diák": stateIndex=0; break;
-         case "Tanár": stateIndex=1; break;
-         case "Admin": stateIndex=2; break;
-         default: System.out.println("Szarság van"); break;
-      }*/
+      /*String regNev = RegNevBox.getText();
+      String regNeptun = RegNeptunBox.getText();
+      String regJelszo = RegJelszoBox.getText();
+
+      System.out.println(regNev + regJelszo + regNeptun + stateIndex);*/
+
       HelloApplication.Registration(RegNevBox.getText().toString(), RegNeptunBox.getText().toString(), stateIndex,String.valueOf(RegJelszoBox.getText()));
-      Message.setText("Sikeres regisztráció!");
+      //Message.setText("Sikeres regisztráció!");
+
    }
 
 
