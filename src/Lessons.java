@@ -41,7 +41,7 @@ public class Lessons {
         {
             String line = "id=" + lessons.get(i).id +
                     ", teacherId=" + users.GetUserFromId(lessons.get(i).teacherId) +
-                    ", tessonName='" + lessons.get(i).tessonName +
+                    ", tessonName='" + lessons.get(i).lessonName +
                     ", location='" + lessons.get(i).location +
                     ", time='" + lessons.get(i).time;
             out.add(line);
@@ -56,7 +56,7 @@ public class Lessons {
         {
             return;
         }
-        String sql = ("INSERT INTO `lessons`(`TeacherId`, `LessonName`, `location`, `time`) VALUES (" + lesson.teacherId + ",'" + lesson.tessonName + "','" + lesson.location + "','" + lesson.time + "')");
+        String sql = ("INSERT INTO `lessons`(`TeacherId`, `LessonName`, `location`, `time`) VALUES (" + lesson.teacherId + ",'" + lesson.lessonName + "','" + lesson.location + "','" + lesson.time + "')");
         Sql.sqlWithoutResponse(sql);
     }
 
@@ -71,6 +71,32 @@ public class Lessons {
         Sql.sqlWithoutResponse(sql);
     }
 
+    public lesson GetLessonFromId(int id)
+    {
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/progtech", "root", "");
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM `lessons` WHERE `id` = " + id);
+            while (resultSet.next())
+            {
+                lesson out = new lesson();
+
+                out.id = resultSet.getInt(1);
+                out.teacherId = resultSet.getInt(2);
+                out.lessonName = resultSet.getString(3);
+                out.location = resultSet.getString(4);
+                out.time = resultSet.getString(5);
+
+                return out;
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
     @Override
     public String toString() {
@@ -80,7 +106,7 @@ public class Lessons {
             lesson lesson = lessons.get(i);
             output = output + "id=" + lesson.id +
                     ", teacherName=" + users.GetUserFromId(lesson.teacherId) +
-                    ", tessonName='" + lesson.tessonName +
+                    ", tessonName='" + lesson.lessonName +
                     ", location='" + lesson.location +
                     ", time='" + lesson.time + "\n";
         }
