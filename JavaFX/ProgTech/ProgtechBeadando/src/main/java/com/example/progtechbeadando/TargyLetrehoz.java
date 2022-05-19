@@ -21,6 +21,26 @@ public class TargyLetrehoz extends Application {
     }
 
     public void Ctargygomb(ActionEvent actionEvent) {
-        //Lessons.AddLesson(HelloApplication.CurrentUser.id,CTargynev.getText(),CTargyhely.getText(),CTargyido.getText());
+
+        lesson nappali = new lesson(0,0,"","Nappali","");
+        lesson levelezo = new lesson(0,0,"","Levelező","");
+
+        lesson add = null;
+
+        switch (CTargyhely.getText())
+        {
+            case "nappali" :
+                add = nappali;
+                break;
+            case "levelező" :
+                add = levelezo;
+
+        }
+        add.lessonName = CTargynev.getText();
+        add.time = CTargyido.getText();
+        add.teacherId = HelloApplication.CurrentUser.id;
+
+        Lessons.AddLesson(add);
+        Lessons.RefressLessons();
     }
 }
