@@ -2,14 +2,21 @@ package com.example.progtechbeadando;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class TargyLetrehoz extends Application {
 
-    public TextField CTargynev;
-    public TextField CTargyhely;
-    public TextField CTargyido;
+    @FXML
+    public TextField CTargynev = new TextField();
+    @FXML
+    public TextField CTargyhely= new TextField();
+    @FXML
+    public TextField CTargyido= new TextField();
+    public RadioButton NappaliGomb;
+    public RadioButton LevGomb;
 
     public static void main(String[] args) {
         launch(args);
@@ -27,15 +34,11 @@ public class TargyLetrehoz extends Application {
 
         lesson add = null;
 
-        switch (CTargyhely.getText())
-        {
-            case "nappali" :
-                add = nappali;
-                break;
-            case "levelező" :
-                add = levelezo;
+        if (NappaliGomb.isSelected())
+            add = nappali;
+        if (LevGomb.isSelected())
+            add = levelezo;
 
-        }
         add.lessonName = CTargynev.getText();
         add.time = CTargyido.getText();
         add.teacherId = HelloApplication.CurrentUser.id;
