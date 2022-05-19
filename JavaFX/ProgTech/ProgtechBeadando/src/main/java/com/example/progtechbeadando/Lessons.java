@@ -75,6 +75,10 @@ public class Lessons {
         catch (Exception e)
         {
             e.printStackTrace();
+            try {
+                Logger.Log("Error","Database Error");
+            }
+            catch (Exception c){}
         }
     }
 
@@ -86,17 +90,30 @@ public class Lessons {
         }
         String sql = ("INSERT INTO `lessons`(`TeacherId`, `LessonName`, `location`, `time`) VALUES (" + lesson.teacherId + ",'" + lesson.lessonName + "','" + lesson.location + "','" + lesson.time + "')");
         Sql.sqlWithoutResponse(sql);
+        try {
+            Logger.Log("Evenet","Add Lesson");
+        }
+        catch (Exception e){}
     }
 
     public void UppdataLesson (int id, String lessonName, String location , String time)
     {
         String sql = ("UPDATE `lessons` SET `LessonName`='" + lessonName + "',`location`='" + location + "',`time`='" + time + "' WHERE `id` = " + id + "");
         Sql.sqlWithoutResponse(sql);
+        try {
+            Logger.Log("Evenet","Uppdata Lesson");
+        }
+        catch (Exception e){}
     }
     public static void DeleteLesson(int id)
     {
         String sql = ("DELETE FROM `lessons` WHERE `id` = " + id + "");
         Sql.sqlWithoutResponse(sql);
+        try {
+            Logger.Log("Evenet","Delete Lesson");
+        }
+        catch (Exception e){}
+
     }
 
     public lesson GetLessonFromId(int id)
