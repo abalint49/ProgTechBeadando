@@ -36,6 +36,8 @@ public class TeacherForm extends Application {
     }
 
     public void DeleteTargy(ActionEvent actionEvent) {
+        Lessons.RefressLessons();
+        System.out.println(HelloApplication.lessons.lessons.get(Tlist.getSelectionModel().getSelectedIndex()).id);
         Lessons.DeleteLesson(HelloApplication.lessons.lessons.get(Tlist.getSelectionModel().getSelectedIndex()).id);
         Refresh();
     }
