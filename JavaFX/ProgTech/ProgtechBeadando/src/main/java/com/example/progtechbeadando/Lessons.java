@@ -13,6 +13,7 @@ public class Lessons {
 
     public static void RefressLessons()
     {
+        lessons = new ArrayList<lesson>();
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/progtech", "root", "");
             Statement statement = connection.createStatement();
