@@ -3,11 +3,9 @@ package com.example.progtechbeadando;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+
 import java.util.ArrayList;
 import java.io.IOException;
 
@@ -98,9 +96,9 @@ public class HelloApplication extends Application {
         Login(neptun, pw);
     }
 
-    static void UppdataLessons(int id, String lessonName, String location , String time)
+    static void UppdataLessons(int Id, String lessonName, String location , String time)
     {
-        lessons.UppdataLesson(id,lessonName,location,time);
+        lessons.UppdataLesson(Id,lessonName,location,time);
         lessons.RefressLessons();
         System.out.println(lessons.toString());
     }
