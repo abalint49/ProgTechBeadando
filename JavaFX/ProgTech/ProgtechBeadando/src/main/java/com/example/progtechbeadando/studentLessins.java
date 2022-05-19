@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class studentLessins {
 
-    sql Sql = new sql();
+    static sql Sql = new sql();
 
     static ArrayList<Integer> lessonIds = new ArrayList<>();
 
@@ -48,7 +48,7 @@ public class studentLessins {
         Sql.sqlWithoutResponse(sql);
     }
 
-    public void DeleteStudentLesson (int StrudentId, int LessontId)
+    public static void DeleteStudentLesson (int StrudentId, int LessontId)
     {
         String sql = ("DELETE FROM `studenttolesson` WHERE `studentid` = " +  StrudentId + " AND `lessonsid` = " +  LessontId + "");
         Sql.sqlWithoutResponse(sql);

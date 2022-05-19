@@ -9,9 +9,9 @@ public class Lessons {
     sql Sql = new sql();
     Users users = new Users();
 
-    ArrayList<lesson> lessons = new ArrayList<>();
+    static ArrayList<lesson> lessons = new ArrayList<>();
 
-    public void RefressLessons()
+    public static void RefressLessons()
     {
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/progtech", "root", "");

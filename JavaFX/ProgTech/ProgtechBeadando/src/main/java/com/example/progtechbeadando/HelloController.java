@@ -48,7 +48,6 @@ public class HelloController {
                 stage.setScene(scene);
                 stage.initModality(Modality.APPLICATION_MODAL);
                 stage.show();
-                StudentForm.startS();
                 //s = new StudentForm();
                 break;
             case "1":
