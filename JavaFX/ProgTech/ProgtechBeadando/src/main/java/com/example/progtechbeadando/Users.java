@@ -10,10 +10,11 @@ public class Users {
 
     private sql Sql = new sql();
 
-    private List<user> users = new ArrayList<>();
+    private ArrayList<user> users = new ArrayList<>();
 
     public void RefressUser()
     {
+        users = new ArrayList<user>();
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/progtech", "root", "");
             Statement statement = connection.createStatement();
