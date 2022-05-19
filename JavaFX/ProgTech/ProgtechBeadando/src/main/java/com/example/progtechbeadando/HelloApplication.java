@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.io.IOException;
 
 
+
+
 public class HelloApplication extends Application {
-    static user CurrentUser = new user();
+    static public user CurrentUser = new user();
 
     static public Users users = new Users();
 
@@ -28,7 +30,11 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-
+        HelloController.StudentLessons.GetStudentLessons(2);
+        for (int i = 0; i < HelloController.StudentLessons.LessonList.size(); i++)
+        {
+            System.out.println(HelloController.StudentLessons.LessonList.get(i).toString());
+        }
     }
 
     public static void main(String[] args) {
@@ -64,11 +70,7 @@ public class HelloApplication extends Application {
 
         //DeleteLesson(3);
 
-        /*StudentLessons.GetStudentLessons(2);
-        for (int i = 0; i < StudentLessons.LessonList.size(); i++)
-        {
-            System.out.println(StudentLessons.LessonList.get(i).toString());
-        }*/
+
 
         //HelloController.StudentLessons.AddStudentLesson(2,2);
 
@@ -82,6 +84,7 @@ public class HelloApplication extends Application {
     {
         CurrentUser = users.login(neptun, pw);
         System.out.println(CurrentUser.toString());
+        System.out.println(CurrentUser.id);
     }
     static void Registration(String name,String neptun, int stat, String pw)
     {

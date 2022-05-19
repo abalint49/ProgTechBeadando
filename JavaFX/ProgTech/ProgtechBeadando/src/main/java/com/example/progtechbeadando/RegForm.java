@@ -2,14 +2,9 @@ package com.example.progtechbeadando;
 
 import javafx.application.Application;
 import javafx.scene.control.TextField;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 
@@ -54,13 +49,12 @@ public class RegForm extends Application {
     }*/
 
 
-
    @Override
    public void start(Stage stage) throws Exception {
 
 
-      FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("RegFormView.fxml"));
-      Scene scene = new Scene(fxmlLoader.load(), 459, 348);
+      /*FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("RegFormView.fxml"));
+      Scene scene = new Scene(fxmlLoader.load(), 459, 348);*/
 
        /*HelloController.StateComboBox.getItems().removeAll(HelloController.StateComboBox.getItems());
        HelloController.StateComboBox.getItems().addAll("Diák", "Tanár", "Admin");
@@ -93,6 +87,8 @@ public class RegForm extends Application {
       RegButton.setDisable(true);
 
    }
+
+
 
 
    //protected void onRegButtonClick() {

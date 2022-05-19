@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechbeadando.StudentForm">
    <children>
-      <TableView fx:id="TeacherTable" id="TeacherTable" layoutX="14.0" layoutY="14.0" prefHeight="368.0" prefWidth="417.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="id" />
-          <TableColumn prefWidth="75.0" text="LessonName" />
-            <TableColumn prefWidth="75.0" text="TeacherID" />
-            <TableColumn prefWidth="75.0" text="Location" />
-            <TableColumn prefWidth="75.0" text="Time" />
-        </columns>
-      </TableView>
       <Button layoutX="476.0" layoutY="72.0" mnemonicParsing="false" text="Button" />
       <Button layoutX="476.0" layoutY="134.0" mnemonicParsing="false" text="Button" />
       <Button layoutX="476.0" layoutY="188.0" mnemonicParsing="false" text="Button" />
+      <ListView fx:id="Slist" layoutX="14.0" layoutY="14.0" prefHeight="377.0" prefWidth="427.0" />
    </children>
 </AnchorPane>

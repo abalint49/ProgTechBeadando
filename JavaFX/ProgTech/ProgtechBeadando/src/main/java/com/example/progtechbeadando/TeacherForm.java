@@ -9,7 +9,8 @@ public class TeacherForm extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        studentLessins.GetStudentLessons(HelloController.CurrentUser.id);
+        studentLessins.GetStudentLessons(HelloApplication.CurrentUser.id);
+        //System.out.println("ASD");
         //studentLessins.LessonList;
     }
 }

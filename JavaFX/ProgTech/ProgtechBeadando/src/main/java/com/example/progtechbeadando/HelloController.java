@@ -18,7 +18,7 @@ import java.util.Objects;
 
 public class HelloController {
 
-    static user CurrentUser = new user();
+    //public static user CurrentUser = new user();
 
     static public Users users = new Users();
 
@@ -40,6 +40,7 @@ public class HelloController {
             case "0":
                 System.out.println("Student oké");
 
+                System.out.println(HelloApplication.CurrentUser.id);
                 root = FXMLLoader.load(getClass().getClassLoader().getResource(("StudentFormView.fxml")));
                 Stage stage = new Stage();
                 Scene scene = new Scene(root);
@@ -47,6 +48,7 @@ public class HelloController {
                 stage.setScene(scene);
                 stage.initModality(Modality.APPLICATION_MODAL);
                 stage.show();
+                StudentForm.startS();
                 //s = new StudentForm();
                 break;
             case "1":
@@ -70,13 +72,12 @@ public class HelloController {
         }
 
     }
-    public void onRegButtonClick() throws IOException {
+    public void onRegButtonClick() throws Exception {
 
 
         root = FXMLLoader.load(getClass().getClassLoader().getResource(("RegFormView.fxml")));
         Stage stage = new Stage();
         Scene scene = new Scene(root);
-        
 
 
         stage.setTitle("Reg");
