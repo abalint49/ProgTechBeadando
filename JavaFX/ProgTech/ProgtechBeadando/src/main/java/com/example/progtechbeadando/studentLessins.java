@@ -28,6 +28,7 @@ public class studentLessins {
         }
         catch (Exception e)
         {
+            Logger.Log("Error","Database Error");
             e.printStackTrace();
         }
 
@@ -40,26 +41,20 @@ public class studentLessins {
             lesson CLesson = HelloController.lessons.GetLessonFromId(lessonIds.get(i));
             LessonList.add(new studentLessin(i,CLesson.lessonName,HelloController.users.GetUserFromId(CLesson.teacherId),CLesson.location,CLesson.time));
         }
+        Logger.Log("Evenet","Get Student Lessons");
     }
 
     public static void AddStudentLesson(int StrudentId, int LessontId)
     {
         String sql = ("INSERT INTO `studenttolesson`(`studentid`, `lessonsid`) VALUES (" +  StrudentId + "," +  LessontId + ")");
         Sql.sqlWithoutResponse(sql);
+        Logger.Log("Evenet","Add Student Lessons");
     }
 
     public static void DeleteStudentLesson (int StrudentId, int LessontId)
     {
         String sql = ("DELETE FROM `studenttolesson` WHERE `studentid` = " +  StrudentId + " AND `lessonsid` = " +  LessontId + "");
         Sql.sqlWithoutResponse(sql);
-    }
-
-    private ArrayList<Integer> GetLessons()
-    {
-        ArrayList<Integer> out = new ArrayList<>();
-
-
-
-        return out;
+        Logger.Log("Evenet","Delete Student Lessons");
     }
 }

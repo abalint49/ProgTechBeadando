@@ -27,10 +27,12 @@ public class Users {
                 String state = resultSet.getString("status");
 
                 users.add(new user(id,name,neptunK,state));
+                Logger.Log("Evenet","Get All User");
             }
         }
         catch (Exception e)
         {
+            Logger.Log("Error","Database Error");
             e.printStackTrace();
         }
     }
@@ -52,10 +54,12 @@ public class Users {
                 String state = resultSet.getString("status");
 
                 user = new user(id,name,neptunK,state);
+                Logger.Log("Evenet","Login");
             }
         }
         catch (Exception e)
         {
+            Logger.Log("Error","Database Error");
             e.printStackTrace();
         }
         if (user == null) return new user();
@@ -70,6 +74,7 @@ public class Users {
         }
         String sql = ("INSERT INTO `users`(`NaptunKod`, `Name`, `status`, `pw`) VALUES  ('"+ neptun + "','"+ name + "','" + stat + "','" + pw + "')");
         Sql.sqlWithoutResponse(sql);
+        Logger.Log("Evenet","Registration");
     }
 
     public String GetUserFromId(int id)
@@ -82,11 +87,13 @@ public class Users {
 
             while (resultSet.next())
             {
+                Logger.Log("Evenet","Get User");
                 return resultSet.getString(1);
             }
         }
         catch (Exception e)
         {
+            Logger.Log("Error","Database Error");
             e.printStackTrace();
         }
         return null;
