@@ -28,6 +28,7 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
+
     }
 
     public static void main(String[] args) {
@@ -53,6 +54,28 @@ public class HelloApplication extends Application {
 
         //UppdataLessons(2,"6uw","w46","zw46");
         //DeleteLesson(3);
+
+        //l.setVisible(true);
+        //System.out.println(CurrentUser.toString());
+
+        //users.regist("kjke","njkd",0,"1234");
+
+        //UppdataLessons(2,"6uw","w46","zw46");
+
+        //DeleteLesson(3);
+
+        /*StudentLessons.GetStudentLessons(2);
+        for (int i = 0; i < StudentLessons.LessonList.size(); i++)
+        {
+            System.out.println(StudentLessons.LessonList.get(i).toString());
+        }*/
+
+        //HelloController.StudentLessons.AddStudentLesson(2,2);
+
+        //StudentLessons.DeleteStudentLesson(2,2);
+
+
+
 
     }
     static void Login(String neptun , String pw)

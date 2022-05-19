@@ -23,9 +23,9 @@ public class RegForm extends Application {
    @FXML
    private TextField RegNeptunBox = new TextField();
    @FXML
-   public static Button RegButton;
+   private Button RegButton;
    @FXML
-   public static Label Message = new Label();
+   private Label Message = new Label();
    @FXML
    public static ToggleGroup RegGroup = new ToggleGroup();
    public RadioButton R1 = new RadioButton();
@@ -89,7 +89,8 @@ public class RegForm extends Application {
       System.out.println(regNev + regJelszo + regNeptun + stateIndex);*/
 
       HelloApplication.Registration(RegNevBox.getText().toString(), RegNeptunBox.getText().toString(), stateIndex,String.valueOf(RegJelszoBox.getText()));
-      //Message.setText("Sikeres regisztráció!");
+      Message.setText("Sikeres regisztráció!");
+      RegButton.setDisable(true);
 
    }
 
