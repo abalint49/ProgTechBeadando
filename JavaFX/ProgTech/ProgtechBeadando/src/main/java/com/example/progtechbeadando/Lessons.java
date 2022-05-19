@@ -6,11 +6,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class Lessons {
-    sql Sql = new sql();
+    static sql Sql = new sql();
     Users users = new Users();
 
     static ArrayList<lesson> lessons = new ArrayList<>();
     static ArrayList<lesson> TeacherLessons = new ArrayList<>();
+
 
     public static void RefressLessons()
     {
@@ -77,7 +78,7 @@ public class Lessons {
         }
     }
 
-    public void AddLesson (lesson lesson)
+    public static void AddLesson(lesson lesson)
     {
         if (lesson == null)
         {
@@ -92,7 +93,7 @@ public class Lessons {
         String sql = ("UPDATE `lessons` SET `LessonName`='" + lessonName + "',`location`='" + location + "',`time`='" + time + "' WHERE `id` = " + id + "");
         Sql.sqlWithoutResponse(sql);
     }
-    public void DeleteLesson (int id)
+    public static void DeleteLesson(int id)
     {
         String sql = ("DELETE FROM `lessons` WHERE `id` = " + id + "");
         Sql.sqlWithoutResponse(sql);

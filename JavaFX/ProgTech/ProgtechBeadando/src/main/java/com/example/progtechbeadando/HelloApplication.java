@@ -30,6 +30,10 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
+        Lessons.RefressLessons();
+        System.out.println(HelloController.lessons);
+
+
         HelloController.StudentLessons.GetStudentLessons(2);
         for (int i = 0; i < HelloController.StudentLessons.LessonList.size(); i++)
         {

@@ -10,7 +10,7 @@ public class Users {
 
     private sql Sql = new sql();
 
-    private ArrayList<user> users = new ArrayList<>();
+    private List<user> users = new ArrayList<>();
 
     public void RefressUser()
     {

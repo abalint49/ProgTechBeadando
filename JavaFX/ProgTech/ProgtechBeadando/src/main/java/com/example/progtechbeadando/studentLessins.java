@@ -42,7 +42,7 @@ public class studentLessins {
         }
     }
 
-    public void AddStudentLesson (int StrudentId, int LessontId)
+    public static void AddStudentLesson(int StrudentId, int LessontId)
     {
         String sql = ("INSERT INTO `studenttolesson`(`studentid`, `lessonsid`) VALUES (" +  StrudentId + "," +  LessontId + ")");
         Sql.sqlWithoutResponse(sql);

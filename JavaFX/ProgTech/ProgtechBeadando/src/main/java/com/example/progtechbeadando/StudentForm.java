@@ -115,6 +115,26 @@ public class StudentForm extends Application {
     }
 
     public void TargyLeadas(ActionEvent actionEvent) {
-        studentLessins.DeleteStudentLesson(HelloApplication.CurrentUser.id, Slist.getSelectionModel().getSelectedIndex());
+        System.out.println(HelloApplication.CurrentUser.id);
+        System.out.println(HelloApplication.lessons.lessons.get(Slist.getSelectionModel().getSelectedIndex()).id);
+        studentLessins.DeleteStudentLesson(HelloApplication.CurrentUser.id, HelloApplication.lessons.lessons.get(Slist.getSelectionModel().getSelectedIndex()).id);
+
+        Frissit();
+    }
+    public void Frissit()
+    {
+        Slist.getItems().clear();
+        studentLessins.GetStudentLessons(HelloApplication.CurrentUser.id);
+        System.out.println(HelloController.StudentLessons.LessonList);
+
+
+        for (int i = 0; i < HelloController.StudentLessons.LessonList.size(); i++) {
+            System.out.println(i);
+            System.out.println(HelloController.StudentLessons.LessonList.get(i));
+            Slist.getItems().add(HelloController.StudentLessons.LessonList.get(i).toString());
+        }
+
+
+        Slist.refresh();
     }
 }
