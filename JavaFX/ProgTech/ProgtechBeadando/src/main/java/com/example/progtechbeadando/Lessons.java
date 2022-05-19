@@ -10,6 +10,7 @@ public class Lessons {
     Users users = new Users();
 
     static ArrayList<lesson> lessons = new ArrayList<>();
+    static ArrayList<lesson> TeacherLessons = new ArrayList<>();
 
     public static void RefressLessons()
     {
@@ -50,6 +51,30 @@ public class Lessons {
         }
 
         return out;
+    }
+
+    public static void RefressTeacherLessons(int TeacherId)
+    {
+        TeacherLessons = new ArrayList<lesson>();
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/progtech", "root", "");
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from lessons WHERE `TeacherId` = " + TeacherId);
+            while (resultSet.next())
+            {
+                int id = resultSet.getInt(1);
+                int teacherId = resultSet.getInt(2);
+                String lessonName = resultSet.getString(3);
+                String location = resultSet.getString(4);
+                String time = resultSet.getString(5);
+
+                TeacherLessons.add(new lesson(id,teacherId,lessonName,location,time));
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void AddLesson (lesson lesson)
