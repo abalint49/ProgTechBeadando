@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
@@ -17,6 +18,7 @@ public class TeacherForm extends Application {
     public boolean betoltveT = false;
     public ListView Tlist;
     public static Parent root;
+    public Label TeacherLabel;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -40,6 +42,7 @@ public class TeacherForm extends Application {
         int selectidId = Integer.parseInt(Tlist.getSelectionModel().getSelectedItems().toString().split(",")[0].split(" ")[1]);
         System.out.println(selectidId);
         Lessons.DeleteLesson(selectidId);
+        TeacherLabel.setText("Tárgy törölve: " + selectidId);
         Refresh();
     }
 

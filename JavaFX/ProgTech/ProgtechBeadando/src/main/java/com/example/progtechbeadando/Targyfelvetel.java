@@ -51,11 +51,11 @@ public class Targyfelvetel extends Application {
     public void Targyfelvetel(ActionEvent actionEvent) {
         studentLessins.AddStudentLesson(LoginForm.CurrentUser.id, LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).id);
         targyfelvLabel.setText("Tárgy felvéve:\n" +
-                LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).id + "\n" +
-                LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).lessonName + "\n" +
-                LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).teacherId + "\n" +
-                LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).location + "\n" +
-                LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).time);
+                "ID: "+LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).id + "\n" +
+                "Kurzus neve: "+LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).lessonName + "\n" +
+                "Tanár ID: "+LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).teacherId + "\n" +
+                "Helyszín: "+LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).location + "\n" +
+                "Időpont: "+LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).time);
     }
     public void RefreshTF(){
         targyfelvList.getItems().clear();

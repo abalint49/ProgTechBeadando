@@ -3,6 +3,7 @@ package com.example.progtechbeadando;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -17,6 +18,7 @@ public class TargyModosit extends Application {
     public TextField CTargyid= new TextField();
     public RadioButton NappaliGomb;
     public RadioButton LevGomb;
+    public Label msg;
 
     public static void main(String[] args) {
         launch(args);
@@ -28,6 +30,12 @@ public class TargyModosit extends Application {
     }
 
     public void Ctargygomb(ActionEvent actionEvent) {
+
+        if (CTargynev.getText().isEmpty()||CTargyido.getText().isEmpty()||CTargyid.getText().isEmpty())
+        {
+            msg.setText("A szövegmezőkben\n nincs adat!");
+            return;
+        }
 
         lesson nappali = new lesson(0,0,"","Nappali","");
         lesson levelezo = new lesson(0,0,"","Levelező","");
@@ -46,5 +54,6 @@ public class TargyModosit extends Application {
         LoginForm.UppdataLessons(Integer.parseInt(CTargyid.getText()),add.lessonName,add.location,add.time);
 
         Lessons.RefressLessons();
+        msg.setText("Tárgy szerkesztve!");
     }
 }

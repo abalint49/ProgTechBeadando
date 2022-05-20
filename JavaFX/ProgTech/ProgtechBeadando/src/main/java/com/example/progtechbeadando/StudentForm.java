@@ -26,6 +26,7 @@ public class StudentForm extends Application {
     public AnchorPane panelS = new AnchorPane();
     public boolean betoltve = false;
     public static Parent root;
+    public Label StudentLabel;
 
 
     @Override
@@ -116,7 +117,7 @@ public class StudentForm extends Application {
         int selectidId = Integer.parseInt(Slist.getSelectionModel().getSelectedItems().toString().split(",")[0].split(" ")[1]);
         //System.out.println(selectidId);
         studentLessins.DeleteStudentLesson(LoginForm.CurrentUser.id, selectidId);
-
+        StudentLabel.setText("Tárgy leadva");
         Frissit();
     }
     public void Frissit()

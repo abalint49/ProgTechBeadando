@@ -11,6 +11,6 @@
       <Button layoutX="476.0" layoutY="134.0" mnemonicParsing="false" onAction="#TargyLeadas" text="Tárgy leadása" />
       <ListView fx:id="Slist" layoutX="14.0" layoutY="14.0" prefHeight="377.0" prefWidth="427.0" />
       <Button layoutX="495.0" layoutY="361.0" mnemonicParsing="false" onAction="#Frissit" text="Frissítés" />
-      <Label layoutX="507.0" layoutY="194.0" fx:id="StudentLabel"/>
+      <Label fx:id="StudentLabel" layoutX="462.0" layoutY="194.0" prefHeight="17.0" prefWidth="119.0" />
    </children>
 </AnchorPane>
