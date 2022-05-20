@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Users {
 
-    private sql Sql = new sql();
+    private final sql Sql = new sql();
 
     private List<user> users = new ArrayList<>();
 

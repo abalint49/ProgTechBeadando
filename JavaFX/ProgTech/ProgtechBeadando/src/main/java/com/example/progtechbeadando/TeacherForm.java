@@ -23,15 +23,13 @@ public class TeacherForm extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         studentLessins.GetStudentLessons(LoginForm.CurrentUser.id);
-        //System.out.println("ASD");
-        //studentLessins.LessonList;
     }
 
     public void CreateTargy(ActionEvent actionEvent) throws IOException {
         root = FXMLLoader.load(getClass().getClassLoader().getResource(("TargyletrehozView.fxml")));
         Stage stage = new Stage();
         Scene scene = new Scene(root);
-        stage.setTitle("DiákForm");
+        stage.setTitle("Tárgy létrehozása");
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
@@ -40,7 +38,6 @@ public class TeacherForm extends Application {
     public void DeleteTargy(ActionEvent actionEvent) {
         Lessons.RefressLessons();
         int selectidId = Integer.parseInt(Tlist.getSelectionModel().getSelectedItems().toString().split(",")[0].split(" ")[1]);
-        System.out.println(selectidId);
         Lessons.DeleteLesson(selectidId);
         TeacherLabel.setText("Tárgy törölve: " + selectidId);
         Refresh();
@@ -50,7 +47,7 @@ public class TeacherForm extends Application {
         root = FXMLLoader.load(getClass().getClassLoader().getResource(("TargymodositView.fxml")));
         Stage stage = new Stage();
         Scene scene = new Scene(root);
-        stage.setTitle("DiákForm");
+        stage.setTitle("Tárgy módosítása");
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
@@ -59,15 +56,9 @@ public class TeacherForm extends Application {
     public void Refresh() {
         Tlist.getItems().clear();
         Lessons.RefressTeacherLessons(LoginForm.CurrentUser.id);
-        //System.out.println(Lessons.TeacherLessons);
-
-
         for (int i = 0; i < Lessons.TeacherLessons.size(); i++) {
-            //System.out.println(i);
-            //System.out.println(Lessons.TeacherLessons.get(i));
             Tlist.getItems().add(Lessons.TeacherLessons.get(i).toString());
         }
-
         Tlist.refresh();
         betoltveT=true;
     }
@@ -75,17 +66,10 @@ public class TeacherForm extends Application {
     public void startT(MouseEvent mouseEvent) {
         if (!betoltveT)
         {
-            System.out.println("Halló");
             Lessons.RefressTeacherLessons(LoginForm.CurrentUser.id);
-            System.out.println(Lessons.TeacherLessons);
-
-
             for (int i = 0; i < Lessons.TeacherLessons.size(); i++) {
-                System.out.println(i);
-                System.out.println(Lessons.TeacherLessons.get(i));
                 Tlist.getItems().add(Lessons.TeacherLessons.get(i).toString());
             }
-
             Tlist.refresh();
             betoltveT=true;
         }

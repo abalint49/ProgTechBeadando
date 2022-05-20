@@ -23,36 +23,26 @@ public class TargyModosit extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
     @Override
     public void start(Stage primaryStage) {
-
     }
-
     public void Ctargygomb(ActionEvent actionEvent) {
-
         if (CTargynev.getText().isEmpty()||CTargyido.getText().isEmpty()||CTargyid.getText().isEmpty())
         {
             msg.setText("A szövegmezőkben\n nincs adat!");
             return;
         }
-
         lesson nappali = new lesson(0,0,"","Nappali","");
         lesson levelezo = new lesson(0,0,"","Levelező","");
-
         lesson add = null;
-
         if (NappaliGomb.isSelected())
             add = nappali;
         if (LevGomb.isSelected())
             add = levelezo;
-
         add.lessonName = CTargynev.getText();
         add.time = CTargyido.getText();
         add.teacherId = LoginForm.CurrentUser.id;
-
         LoginForm.UppdataLessons(Integer.parseInt(CTargyid.getText()),add.lessonName,add.location,add.time);
-
         Lessons.RefressLessons();
         msg.setText("Tárgy szerkesztve!");
     }

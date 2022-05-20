@@ -9,7 +9,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class TargyLetrehoz extends Application {
-
     @FXML
     public TextField CTargynev = new TextField();
     @FXML
@@ -21,35 +20,25 @@ public class TargyLetrehoz extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
     @Override
     public void start(Stage primaryStage) {
-
     }
-
     public void Ctargygomb(ActionEvent actionEvent) {
-
         if (CTargynev.getText().isEmpty()||CTargyido.getText().isEmpty())
         {
             TClabel.setText("A szövegmezőkben\n nincs adat!");
             return;
         }
-
-
         lesson nappali = new lesson(0,0,"","Nappali","");
         lesson levelezo = new lesson(0,0,"","Levelező","");
-
         lesson add = null;
-
         if (NappaliGomb.isSelected())
             add = nappali;
         if (LevGomb.isSelected())
             add = levelezo;
-
         add.lessonName = CTargynev.getText();
         add.time = CTargyido.getText();
         add.teacherId = LoginForm.CurrentUser.id;
-
         Lessons.AddLesson(add);
         TClabel.setText("Tárgy létrehozva!");
         Lessons.RefressLessons();

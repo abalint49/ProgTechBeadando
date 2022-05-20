@@ -32,7 +32,7 @@ public class studentLessins {
             e.printStackTrace();
         }
 
-        LoginController.lessons.RefressLessons();
+        Lessons.RefressLessons();
 
         LessonList = new ArrayList<studentLessin>();
 

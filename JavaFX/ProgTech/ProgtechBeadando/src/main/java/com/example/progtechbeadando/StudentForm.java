@@ -27,76 +27,18 @@ public class StudentForm extends Application {
     public boolean betoltve = false;
     public static Parent root;
     public Label StudentLabel;
-
-
     @Override
     public void start(Stage stage) throws Exception {
     }
-
     public void startS() {
     if (!betoltve)
-{
-        System.out.println("Halló");
+        {
         studentLessins.GetStudentLessons(LoginForm.CurrentUser.id);
         Frissit();
-        /*System.out.println(LoginController.StudentLessons.LessonList);
-
-
-        for (int i = 0; i < LoginController.StudentLessons.LessonList.size(); i++) {
-            //System.out.println(i);
-            //System.out.println(LoginController.StudentLessons.LessonList.get(i));
-            Slist.getItems().add(LoginController.StudentLessons.LessonList.get(i).toString());
-        }*/
-
         Slist.refresh();
-    betoltve=true;
+        betoltve=true;
     }
     else return;
-
-        /*
-        for (studentLessin lessons : LoginController.StudentLessons.LessonList)
-        {
-            Slist.getItems().add(lessons.toString());
-        }*/
-
-
-
-
-        /*studentLessins.GetStudentLessons(0);
-        System.out.println(LoginController.StudentLessons.LessonList);
-        studentLessins.GetStudentLessons(1);
-        System.out.println(LoginController.StudentLessons.LessonList);
-        studentLessins.GetStudentLessons(2);
-        System.out.println(LoginController.StudentLessons.LessonList);
-
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        TeacherTable.getColumns().add(id);
-
-        LoginController.StudentLessons.GetStudentLessons(2);
-        for (int i = 0; i < LoginController.StudentLessons.LessonList.size(); i++)
-        {
-            System.out.println(LoginController.StudentLessons.LessonList.get(i).toString());
-        }
-
-        System.out.println(LoginForm.CurrentUser.id+"\n"); //MIÉRT NULLÁZZA LE?
-        studentLessins.GetStudentLessons(LoginForm.CurrentUser.id);  //Üressé teszi a listát
-        studentLessins.GetStudentLessons(2);
-        System.out.println(LoginController.StudentLessons.LessonList);
-        ObservableList<studentLessin> asd = FXCollections.observableArrayList(LoginController.StudentLessons.LessonList);
-        asd.addAll(LoginController.StudentLessons.LessonList);
-        for (studentLessin lessons : LoginController.StudentLessons.LessonList)
-        {
-            TeacherTable.getItems().add(asd);
-        }
-        TeacherTable.refresh();
-
-
-        ArrayList<studentLessin> qwe;
-        qwe = new ArrayList<>(LoginController.StudentLessons.LessonList);
-
-        TeacherTable.refresh();*/
-
-
     }
 
     public void TargyFelvetel(ActionEvent actionEvent) throws IOException {
@@ -110,12 +52,7 @@ public class StudentForm extends Application {
     }
 
     public void TargyLeadas(ActionEvent actionEvent) {
-
-
-        //System.out.println(LoginForm.CurrentUser.id);
-
         int selectidId = Integer.parseInt(Slist.getSelectionModel().getSelectedItems().toString().split(",")[0].split(" ")[1]);
-        //System.out.println(selectidId);
         studentLessins.DeleteStudentLesson(LoginForm.CurrentUser.id, selectidId);
         StudentLabel.setText("Tárgy leadva");
         Frissit();
@@ -124,16 +61,9 @@ public class StudentForm extends Application {
     {
         Slist.getItems().clear();
         studentLessins.GetStudentLessons(LoginForm.CurrentUser.id);
-        //System.out.println(LoginController.StudentLessons.LessonList);
-
-
-        for (int i = 0; i < LoginController.StudentLessons.LessonList.size(); i++) {
-            //System.out.println(i);
-            //System.out.println(LoginController.StudentLessons.LessonList.get(i));
-            Slist.getItems().add(LoginController.StudentLessons.LessonList.get(i).toString());
+        for (int i = 0; i < studentLessins.LessonList.size(); i++) {
+            Slist.getItems().add(studentLessins.LessonList.get(i).toString());
         }
-
-
         Slist.refresh();
     }
 }
