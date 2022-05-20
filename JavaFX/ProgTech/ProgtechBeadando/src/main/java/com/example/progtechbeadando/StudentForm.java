@@ -37,14 +37,15 @@ public class StudentForm extends Application {
 {
         System.out.println("Halló");
         studentLessins.GetStudentLessons(LoginForm.CurrentUser.id);
-        System.out.println(LoginController.StudentLessons.LessonList);
+        Frissit();
+        /*System.out.println(LoginController.StudentLessons.LessonList);
 
 
         for (int i = 0; i < LoginController.StudentLessons.LessonList.size(); i++) {
-            System.out.println(i);
-            System.out.println(LoginController.StudentLessons.LessonList.get(i));
+            //System.out.println(i);
+            //System.out.println(LoginController.StudentLessons.LessonList.get(i));
             Slist.getItems().add(LoginController.StudentLessons.LessonList.get(i).toString());
-        }
+        }*/
 
         Slist.refresh();
     betoltve=true;
@@ -111,8 +112,9 @@ public class StudentForm extends Application {
 
 
         //System.out.println(LoginForm.CurrentUser.id);
-        int selectidId = Integer.parseInt(Slist.getSelectionModel().getSelectedItems().toString().split("=")[1].split("'")[1]);
-        System.out.println(selectidId);
+
+        int selectidId = Integer.parseInt(Slist.getSelectionModel().getSelectedItems().toString().split(",")[0].split(" ")[1]);
+        //System.out.println(selectidId);
         studentLessins.DeleteStudentLesson(LoginForm.CurrentUser.id, selectidId);
 
         Frissit();
@@ -121,12 +123,12 @@ public class StudentForm extends Application {
     {
         Slist.getItems().clear();
         studentLessins.GetStudentLessons(LoginForm.CurrentUser.id);
-        System.out.println(LoginController.StudentLessons.LessonList);
+        //System.out.println(LoginController.StudentLessons.LessonList);
 
 
         for (int i = 0; i < LoginController.StudentLessons.LessonList.size(); i++) {
-            System.out.println(i);
-            System.out.println(LoginController.StudentLessons.LessonList.get(i));
+            //System.out.println(i);
+            //System.out.println(LoginController.StudentLessons.LessonList.get(i));
             Slist.getItems().add(LoginController.StudentLessons.LessonList.get(i).toString());
         }
 

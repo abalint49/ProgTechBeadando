@@ -29,11 +29,11 @@ public class LoginForm extends Application {
 
         Lessons.RefressLessons();
 
-        LoginController.StudentLessons.GetStudentLessons(2);
+        /*LoginController.StudentLessons.GetStudentLessons(2);
         for (int i = 0; i < LoginController.StudentLessons.LessonList.size(); i++)
         {
             System.out.println(LoginController.StudentLessons.LessonList.get(i).toString());
-        }
+        }*/
     }
 
     public static void main(String[] args) {

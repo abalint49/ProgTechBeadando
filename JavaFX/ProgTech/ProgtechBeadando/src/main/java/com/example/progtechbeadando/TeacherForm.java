@@ -37,7 +37,7 @@ public class TeacherForm extends Application {
 
     public void DeleteTargy(ActionEvent actionEvent) {
         Lessons.RefressLessons();
-        int selectidId = Integer.parseInt(Tlist.getSelectionModel().getSelectedItems().toString().split(",")[0].split("=")[1]);
+        int selectidId = Integer.parseInt(Tlist.getSelectionModel().getSelectedItems().toString().split(",")[0].split(" ")[1]);
         System.out.println(selectidId);
         Lessons.DeleteLesson(selectidId);
         Refresh();
