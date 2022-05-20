@@ -41,7 +41,7 @@ public class TargyLetrehoz extends Application {
 
         add.lessonName = CTargynev.getText();
         add.time = CTargyido.getText();
-        add.teacherId = HelloApplication.CurrentUser.id;
+        add.teacherId = LoginForm.CurrentUser.id;
 
         Lessons.AddLesson(add);
         Lessons.RefressLessons();

@@ -9,6 +9,7 @@
    <children>
       <ListView fx:id="targyfelvList" layoutX="14.0" layoutY="14.0" prefHeight="370.0" prefWidth="433.0" />
       <Label fx:id="targyfelvLabel" layoutX="505.0" layoutY="117.0" text="" />
-      <Button fx:id="targyfelvGomb" layoutX="493.0" layoutY="67.0" mnemonicParsing="false" onAction="#Targyfelvetel" text="Button" />
+      <Button fx:id="targyfelvGomb" layoutX="472.0" layoutY="67.0" mnemonicParsing="false" onAction="#Targyfelvetel" text="Tárgy felvétele" />
+      <Button fx:id="RefreshTF" layoutX="493.0" layoutY="359.0" mnemonicParsing="false" text="Frissítés" onAction="#RefreshTF" />
    </children>
 </AnchorPane>

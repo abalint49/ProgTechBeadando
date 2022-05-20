@@ -41,9 +41,9 @@ public class TargyModosit extends Application {
 
         add.lessonName = CTargynev.getText();
         add.time = CTargyido.getText();
-        add.teacherId = HelloApplication.CurrentUser.id;
+        add.teacherId = LoginForm.CurrentUser.id;
 
-        HelloApplication.UppdataLessons(Integer.parseInt(CTargyid.getText()),add.lessonName,add.location,add.time);
+        LoginForm.UppdataLessons(Integer.parseInt(CTargyid.getText()),add.lessonName,add.location,add.time);
 
         Lessons.RefressLessons();
     }

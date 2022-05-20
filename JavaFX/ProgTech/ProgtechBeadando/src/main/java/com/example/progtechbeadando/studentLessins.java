@@ -32,14 +32,14 @@ public class studentLessins {
             e.printStackTrace();
         }
 
-        HelloController.lessons.RefressLessons();
+        LoginController.lessons.RefressLessons();
 
         LessonList = new ArrayList<studentLessin>();
 
         for (int i = 0; i < lessonIds.size(); i++)
         {
-            lesson CLesson = HelloController.lessons.GetLessonFromId(lessonIds.get(i));
-            LessonList.add(new studentLessin(i,CLesson.lessonName,HelloController.users.GetUserFromId(CLesson.teacherId),CLesson.location,CLesson.time));
+            lesson CLesson = LoginController.lessons.GetLessonFromId(lessonIds.get(i));
+            LessonList.add(new studentLessin(i,CLesson.lessonName, LoginController.users.GetUserFromId(CLesson.teacherId),CLesson.location,CLesson.time));
         }
         Logger.Log("Evenet","Get Student Lessons");
     }

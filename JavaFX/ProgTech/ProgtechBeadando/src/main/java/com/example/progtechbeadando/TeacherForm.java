@@ -20,7 +20,7 @@ public class TeacherForm extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        studentLessins.GetStudentLessons(HelloApplication.CurrentUser.id);
+        studentLessins.GetStudentLessons(LoginForm.CurrentUser.id);
         //System.out.println("ASD");
         //studentLessins.LessonList;
     }
@@ -55,7 +55,7 @@ public class TeacherForm extends Application {
 
     public void Refresh() {
         Tlist.getItems().clear();
-        Lessons.RefressTeacherLessons(HelloApplication.CurrentUser.id);
+        Lessons.RefressTeacherLessons(LoginForm.CurrentUser.id);
         //System.out.println(Lessons.TeacherLessons);
 
 
@@ -73,7 +73,7 @@ public class TeacherForm extends Application {
         if (!betoltveT)
         {
             System.out.println("Halló");
-            Lessons.RefressTeacherLessons(HelloApplication.CurrentUser.id);
+            Lessons.RefressTeacherLessons(LoginForm.CurrentUser.id);
             System.out.println(Lessons.TeacherLessons);
 
 

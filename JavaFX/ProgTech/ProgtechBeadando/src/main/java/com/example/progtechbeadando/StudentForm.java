@@ -1,8 +1,6 @@
 package com.example.progtechbeadando;
 
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,16 +9,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
-import static com.example.progtechbeadando.HelloController.StudentLessons;
-import static com.example.progtechbeadando.HelloController.lessons;
 
 public class StudentForm extends Application {
     @FXML
@@ -43,14 +36,14 @@ public class StudentForm extends Application {
     if (!betoltve)
 {
         System.out.println("Halló");
-        studentLessins.GetStudentLessons(HelloApplication.CurrentUser.id);
-        System.out.println(HelloController.StudentLessons.LessonList);
+        studentLessins.GetStudentLessons(LoginForm.CurrentUser.id);
+        System.out.println(LoginController.StudentLessons.LessonList);
 
 
-        for (int i = 0; i < HelloController.StudentLessons.LessonList.size(); i++) {
+        for (int i = 0; i < LoginController.StudentLessons.LessonList.size(); i++) {
             System.out.println(i);
-            System.out.println(HelloController.StudentLessons.LessonList.get(i));
-            Slist.getItems().add(HelloController.StudentLessons.LessonList.get(i).toString());
+            System.out.println(LoginController.StudentLessons.LessonList.get(i));
+            Slist.getItems().add(LoginController.StudentLessons.LessonList.get(i).toString());
         }
 
         Slist.refresh();
@@ -59,7 +52,7 @@ public class StudentForm extends Application {
     else return;
 
         /*
-        for (studentLessin lessons : HelloController.StudentLessons.LessonList)
+        for (studentLessin lessons : LoginController.StudentLessons.LessonList)
         {
             Slist.getItems().add(lessons.toString());
         }*/
@@ -68,28 +61,28 @@ public class StudentForm extends Application {
 
 
         /*studentLessins.GetStudentLessons(0);
-        System.out.println(HelloController.StudentLessons.LessonList);
+        System.out.println(LoginController.StudentLessons.LessonList);
         studentLessins.GetStudentLessons(1);
-        System.out.println(HelloController.StudentLessons.LessonList);
+        System.out.println(LoginController.StudentLessons.LessonList);
         studentLessins.GetStudentLessons(2);
-        System.out.println(HelloController.StudentLessons.LessonList);
+        System.out.println(LoginController.StudentLessons.LessonList);
 
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
         TeacherTable.getColumns().add(id);
 
-        HelloController.StudentLessons.GetStudentLessons(2);
-        for (int i = 0; i < HelloController.StudentLessons.LessonList.size(); i++)
+        LoginController.StudentLessons.GetStudentLessons(2);
+        for (int i = 0; i < LoginController.StudentLessons.LessonList.size(); i++)
         {
-            System.out.println(HelloController.StudentLessons.LessonList.get(i).toString());
+            System.out.println(LoginController.StudentLessons.LessonList.get(i).toString());
         }
 
-        System.out.println(HelloApplication.CurrentUser.id+"\n"); //MIÉRT NULLÁZZA LE?
-        studentLessins.GetStudentLessons(HelloApplication.CurrentUser.id);  //Üressé teszi a listát
+        System.out.println(LoginForm.CurrentUser.id+"\n"); //MIÉRT NULLÁZZA LE?
+        studentLessins.GetStudentLessons(LoginForm.CurrentUser.id);  //Üressé teszi a listát
         studentLessins.GetStudentLessons(2);
-        System.out.println(HelloController.StudentLessons.LessonList);
-        ObservableList<studentLessin> asd = FXCollections.observableArrayList(HelloController.StudentLessons.LessonList);
-        asd.addAll(HelloController.StudentLessons.LessonList);
-        for (studentLessin lessons : HelloController.StudentLessons.LessonList)
+        System.out.println(LoginController.StudentLessons.LessonList);
+        ObservableList<studentLessin> asd = FXCollections.observableArrayList(LoginController.StudentLessons.LessonList);
+        asd.addAll(LoginController.StudentLessons.LessonList);
+        for (studentLessin lessons : LoginController.StudentLessons.LessonList)
         {
             TeacherTable.getItems().add(asd);
         }
@@ -97,7 +90,7 @@ public class StudentForm extends Application {
 
 
         ArrayList<studentLessin> qwe;
-        qwe = new ArrayList<>(HelloController.StudentLessons.LessonList);
+        qwe = new ArrayList<>(LoginController.StudentLessons.LessonList);
 
         TeacherTable.refresh();*/
 
@@ -115,23 +108,23 @@ public class StudentForm extends Application {
     }
 
     public void TargyLeadas(ActionEvent actionEvent) {
-        System.out.println(HelloApplication.CurrentUser.id);
-        System.out.println(HelloApplication.lessons.lessons.get(Slist.getSelectionModel().getSelectedIndex()).id);
-        studentLessins.DeleteStudentLesson(HelloApplication.CurrentUser.id, HelloApplication.lessons.lessons.get(Slist.getSelectionModel().getSelectedIndex()).id);
+        System.out.println(LoginForm.CurrentUser.id);
+        System.out.println(LoginForm.lessons.lessons.get(Slist.getSelectionModel().getSelectedIndex()).id);
+        studentLessins.DeleteStudentLesson(LoginForm.CurrentUser.id, LoginForm.lessons.lessons.get(Slist.getSelectionModel().getSelectedIndex()).id);
 
         Frissit();
     }
     public void Frissit()
     {
         Slist.getItems().clear();
-        studentLessins.GetStudentLessons(HelloApplication.CurrentUser.id);
-        System.out.println(HelloController.StudentLessons.LessonList);
+        studentLessins.GetStudentLessons(LoginForm.CurrentUser.id);
+        System.out.println(LoginController.StudentLessons.LessonList);
 
 
-        for (int i = 0; i < HelloController.StudentLessons.LessonList.size(); i++) {
+        for (int i = 0; i < LoginController.StudentLessons.LessonList.size(); i++) {
             System.out.println(i);
-            System.out.println(HelloController.StudentLessons.LessonList.get(i));
-            Slist.getItems().add(HelloController.StudentLessons.LessonList.get(i).toString());
+            System.out.println(LoginController.StudentLessons.LessonList.get(i));
+            Slist.getItems().add(LoginController.StudentLessons.LessonList.get(i).toString());
         }
 
 

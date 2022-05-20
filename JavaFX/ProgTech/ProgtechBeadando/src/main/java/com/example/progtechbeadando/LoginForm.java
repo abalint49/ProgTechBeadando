@@ -3,7 +3,6 @@ package com.example.progtechbeadando;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -12,7 +11,7 @@ import java.io.IOException;
 
 
 
-public class HelloApplication extends Application {
+public class LoginForm extends Application {
     static public user CurrentUser = new user();
 
     static public Users users = new Users();
@@ -22,36 +21,34 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginForm.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 459, 348);
-        stage.setTitle("Hello!");
+        stage.setTitle("Üdvözli önt a NEPTUN!");
         stage.setScene(scene);
         stage.show();
 
         Lessons.RefressLessons();
-        System.out.println(HelloController.lessons);
 
-
-        HelloController.StudentLessons.GetStudentLessons(2);
-        for (int i = 0; i < HelloController.StudentLessons.LessonList.size(); i++)
+        LoginController.StudentLessons.GetStudentLessons(2);
+        for (int i = 0; i < LoginController.StudentLessons.LessonList.size(); i++)
         {
-            System.out.println(HelloController.StudentLessons.LessonList.get(i).toString());
+            System.out.println(LoginController.StudentLessons.LessonList.get(i).toString());
         }
     }
 
     public static void main(String[] args) {
         launch();
 
-        users.RefressUser();
+        //users.RefressUser();
         //System.out.println(users.toString());
 
-        lessons.RefressLessons();
+        //lessons.RefressLessons();
         //System.out.println(lessons.toString());
 
-        ArrayList<String> LessonList = lessons.LessonsToStringList();
-        System.out.println(LessonList);
+        //ArrayList<String> LessonList = lessons.LessonsToStringList();
+        //System.out.println(LessonList);
 
-        Login("A49I6H","1234");
+        //Login("A49I6H","1234");
 
         //LogInForm l = new LogInForm();
 
@@ -74,7 +71,7 @@ public class HelloApplication extends Application {
 
 
 
-        //HelloController.StudentLessons.AddStudentLesson(2,2);
+        //LoginController.StudentLessons.AddStudentLesson(2,2);
 
         //StudentLessons.DeleteStudentLesson(2,2);
 

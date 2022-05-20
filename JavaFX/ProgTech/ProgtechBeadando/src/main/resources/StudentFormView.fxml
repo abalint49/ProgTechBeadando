@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane fx:id="panelS" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#startS" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechbeadando.StudentForm">
    <children>
-      <Button layoutX="476.0" layoutY="72.0" mnemonicParsing="false" text="Tárgy felvétele" onAction="#TargyFelvetel"/>
-      <Button layoutX="476.0" layoutY="134.0" mnemonicParsing="false" text="Tárgy leadása" onAction="#TargyLeadas"/>
+      <Button layoutX="476.0" layoutY="72.0" mnemonicParsing="false" onAction="#TargyFelvetel" text="Tárgy felvétele" />
+      <Button layoutX="476.0" layoutY="134.0" mnemonicParsing="false" onAction="#TargyLeadas" text="Tárgy leadása" />
       <ListView fx:id="Slist" layoutX="14.0" layoutY="14.0" prefHeight="377.0" prefWidth="427.0" />
-      <Button layoutX="495.0" layoutY="361.0" mnemonicParsing="false" text="Frissítés" onAction="#Frissit"/>
+      <Button layoutX="495.0" layoutY="361.0" mnemonicParsing="false" onAction="#Frissit" text="Frissítés" />
+      <Label layoutX="507.0" layoutY="194.0" fx:id="StudentLabel"/>
    </children>
 </AnchorPane>

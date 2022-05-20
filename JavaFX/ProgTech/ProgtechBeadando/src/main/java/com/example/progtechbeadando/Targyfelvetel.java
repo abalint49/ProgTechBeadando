@@ -3,18 +3,18 @@ package com.example.progtechbeadando;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-
-import java.util.ArrayList;
 
 public class Targyfelvetel extends Application {
     public boolean betoltve1 = false;
     @FXML
     public ListView targyfelvList;
     public Label targyfelvLabel;
+    public Button RefreshTF;
 
 
     public static void main(String[] args) {
@@ -32,12 +32,12 @@ public class Targyfelvetel extends Application {
 
 
             Lessons.RefressLessons();
-            System.out.println(HelloController.lessons);
+            System.out.println(LoginController.lessons);
 
-            for (int i = 0; i < HelloController.lessons.lessons.size(); i++) {
+            for (int i = 0; i < LoginController.lessons.lessons.size(); i++) {
                 System.out.println(i);
-                System.out.println(HelloController.lessons.lessons.get(i));
-                targyfelvList.getItems().add(HelloController.lessons.lessons.get(i));
+                System.out.println(LoginController.lessons.lessons.get(i));
+                targyfelvList.getItems().add(LoginController.lessons.lessons.get(i));
             }
 
 
@@ -49,13 +49,24 @@ public class Targyfelvetel extends Application {
     }
 
     public void Targyfelvetel(ActionEvent actionEvent) {
-        studentLessins.AddStudentLesson(HelloApplication.CurrentUser.id, HelloApplication.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).id);
+        studentLessins.AddStudentLesson(LoginForm.CurrentUser.id, LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).id);
         targyfelvLabel.setText("Tárgy felvéve:\n" +
-                HelloApplication.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).id + "\n" +
-                HelloApplication.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).lessonName + "\n" +
-                HelloApplication.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).teacherId + "\n" +
-                HelloApplication.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).location + "\n" +
-                HelloApplication.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).time);
+                LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).id + "\n" +
+                LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).lessonName + "\n" +
+                LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).teacherId + "\n" +
+                LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).location + "\n" +
+                LoginForm.lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).time);
+    }
+    public void RefreshTF(){
+        targyfelvList.getItems().clear();
+        Lessons.RefressLessons();
+        System.out.println(LoginController.lessons);
+
+        for (int i = 0; i < LoginController.lessons.lessons.size(); i++) {
+            System.out.println(i);
+            System.out.println(LoginController.lessons.lessons.get(i));
+            targyfelvList.getItems().add(LoginController.lessons.lessons.get(i));
+        }
     }
 
 

@@ -1,22 +1,17 @@
 package com.example.progtechbeadando;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.application.Application;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import java.io.IOException;
-import java.util.Objects;
+import java.sql.SQLException;
 
-public class HelloController {
+public class LoginController {
 
     //public static user CurrentUser = new user();
 
@@ -32,15 +27,23 @@ public class HelloController {
 
 
     public static Parent root;
+    public Label ErrorLogin;
 
     @FXML
     protected void onLoginButtonClick() throws IOException {
-        HelloApplication.Login(LoginNeptunBox.getText(), LoginJelszoBox.getText());
-        switch (HelloApplication.CurrentUser.state) {
+        if (LoginNeptunBox.getText().isEmpty()||LoginJelszoBox.getText().isEmpty())
+        {
+            ErrorLogin.setText("A neptunkód és a jelszó nem lehet üres!");
+            return;
+        }
+
+            LoginForm.Login(LoginNeptunBox.getText(), LoginJelszoBox.getText());
+
+        switch (LoginForm.CurrentUser.state) {
             case "0":
                 System.out.println("Student oké");
 
-                System.out.println(HelloApplication.CurrentUser.id);
+                System.out.println(LoginForm.CurrentUser.id);
                 root = FXMLLoader.load(getClass().getClassLoader().getResource(("StudentFormView.fxml")));
                 Stage stage = new Stage();
                 Scene scene = new Scene(root);
@@ -79,7 +82,7 @@ public class HelloController {
         Scene scene = new Scene(root);
 
 
-        stage.setTitle("Reg");
+        stage.setTitle("Regisztráció");
         stage.setScene(scene);
 
         stage.initModality(Modality.APPLICATION_MODAL);

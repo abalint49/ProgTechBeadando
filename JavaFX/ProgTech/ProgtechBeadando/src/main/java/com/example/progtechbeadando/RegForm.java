@@ -9,8 +9,8 @@ import javafx.stage.Stage;
 
 
 public class RegForm extends Application {
-   /*     HelloController.StateComboBox.getItems().removeAll(HelloController.StateComboBox.getItems());
-    HelloController.StateComboBox.getItems().addAll("Option A","Option B","Option C");*/
+   /*     LoginController.StateComboBox.getItems().removeAll(LoginController.StateComboBox.getItems());
+    LoginController.StateComboBox.getItems().addAll("Option A","Option B","Option C");*/
    @FXML
    private PasswordField RegJelszoBox = new PasswordField();
    @FXML
@@ -53,15 +53,15 @@ public class RegForm extends Application {
    public void start(Stage stage) throws Exception {
 
 
-      /*FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("RegFormView.fxml"));
+      /*FXMLLoader fxmlLoader = new FXMLLoader(LoginForm.class.getResource("RegFormView.fxml"));
       Scene scene = new Scene(fxmlLoader.load(), 459, 348);*/
 
-       /*HelloController.StateComboBox.getItems().removeAll(HelloController.StateComboBox.getItems());
-       HelloController.StateComboBox.getItems().addAll("Diák", "Tanár", "Admin");
-       HelloController.StateComboBox.getSelectionModel().select("Diák");*/
+       /*LoginController.StateComboBox.getItems().removeAll(LoginController.StateComboBox.getItems());
+       LoginController.StateComboBox.getItems().addAll("Diák", "Tanár", "Admin");
+       LoginController.StateComboBox.getSelectionModel().select("Diák");*/
 
       /*ObservableList<String> list = FXCollections.observableArrayList("Diák","Tanár","Admin") ;
-      HelloController.StateComboBox.setItems(list);*/
+      LoginController.StateComboBox.setItems(list);*/
 
       /*stage.setTitle("Hello!");
       stage.setScene(scene);
@@ -71,6 +71,12 @@ public class RegForm extends Application {
 
 
    public void RegButtonClick(ActionEvent actionEvent) {
+      if (RegNevBox.getText().isEmpty()||RegNeptunBox.getText().isEmpty()||RegJelszoBox.getText().isEmpty())
+      {
+         Message.setText("A név, a neptunkód és a jelszó\n nem lehet üres!");
+         return;
+      }
+
       int stateIndex = 0;
       if (R1.isSelected()) stateIndex=0;
       if (R2.isSelected()) stateIndex=1;
@@ -82,7 +88,7 @@ public class RegForm extends Application {
 
       System.out.println(regNev + regJelszo + regNeptun + stateIndex);*/
 
-      HelloApplication.Registration(RegNevBox.getText().toString(), RegNeptunBox.getText().toString(), stateIndex,String.valueOf(RegJelszoBox.getText()));
+      LoginForm.Registration(RegNevBox.getText().toString(), RegNeptunBox.getText().toString(), stateIndex,String.valueOf(RegJelszoBox.getText()));
       Message.setText("Sikeres regisztráció!");
       RegButton.setDisable(true);
 
@@ -93,20 +99,20 @@ public class RegForm extends Application {
 
    //protected void onRegButtonClick() {
       /*int stateIndex = 0;
-      switch (HelloController.RegGroup.getSelectedToggle().toString())
+      switch (LoginController.RegGroup.getSelectedToggle().toString())
       {
          case "Diák": stateIndex=0; break;
          case "Tanár": stateIndex=1; break;
          case "Admin": stateIndex=2; break;
          default: System.out.println("Szarság van"); break;
       }
-        HelloApplication.Registration(HelloController.RegNevBox.getText(), HelloController.RegNeptunBox.getText(), stateIndex,String.valueOf(HelloController.RegJelszoBox.getText()));
-        HelloController.Message.setText("Sikeres regisztráció!");*/
+        LoginForm.Registration(LoginController.RegNevBox.getText(), LoginController.RegNeptunBox.getText(), stateIndex,String.valueOf(LoginController.RegJelszoBox.getText()));
+        LoginController.Message.setText("Sikeres regisztráció!");*/
         /*JOptionPane.showMessageDialog(null, "Sikeres regisztráció!", "Siker",JOptionPane.WARNING_MESSAGE);*/
-      //Stage stage = (Stage) HelloController.RegButton.getScene().getWindow();
+      //Stage stage = (Stage) LoginController.RegButton.getScene().getWindow();
       //stage.close();
-            /*HelloApplication.Registration(HelloController.RegNevBox.getText(), HelloController.RegNeptunBox.getText(), HelloController.StateComboBox.getVisibleRowCount(), String.valueOf(HelloController.RegJelszoBox.getText()));
-            HelloController.Message.setText("Sikeres regisztráció!");
+            /*LoginForm.Registration(LoginController.RegNevBox.getText(), LoginController.RegNeptunBox.getText(), LoginController.StateComboBox.getVisibleRowCount(), String.valueOf(LoginController.RegJelszoBox.getText()));
+            LoginController.Message.setText("Sikeres regisztráció!");
 
              */
    //}
