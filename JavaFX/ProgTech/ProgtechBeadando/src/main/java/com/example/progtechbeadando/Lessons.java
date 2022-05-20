@@ -101,7 +101,9 @@ public class Lessons {
     }
     public static void DeleteLesson(int id)
     {
-        String sql = ("DELETE FROM `lessons` WHERE `id` = " + id + "");
+        String sql = ("DELETE FROM `lessons` WHERE `id` = " + id);
+        Sql.sqlWithoutResponse(sql);
+        sql = ("DELETE FROM `studenttolesson` WHERE `lessonsid` = " + id);
         Sql.sqlWithoutResponse(sql);
         Logger.Log("Evenet","Delete Lesson");
 
