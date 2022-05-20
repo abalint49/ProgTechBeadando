@@ -16,6 +16,7 @@ public class Logger {
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine())
             {
+                if (scanner.nextLine().toString() != "")
                 log =  log + "\n" + scanner.nextLine().toString();
             }
 

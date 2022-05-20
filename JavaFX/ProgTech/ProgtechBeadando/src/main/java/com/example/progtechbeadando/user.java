@@ -19,11 +19,6 @@ public class user {
 
     @Override
     public String toString() {
-        return "user{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", neptunK='" + neptunK + '\'' +
-                ", state='" + state + '\'' +
-                '}';
+        return id + ".(" + state + ") " + name + ", " + neptunK;
     }
 }

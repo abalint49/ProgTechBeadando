@@ -13,11 +13,7 @@ public class studentLessin {
 
     @Override
     public String toString() {
-        return "id='" + lessonId + '\'' +
-                ", lessonName='" + lessonName + '\'' +
-                ", teacherName='" + teacherName + '\'' +
-                ", location='" + location + '\'' +
-                ", time='" + time + '\'';
+        return " " + lessonId + ", " + lessonName + " (" + teacherName + ") - " + location + ", " + time;
     }
 
     public studentLessin(int lessonId, String lessonName, String teacherName, String location, String time) {

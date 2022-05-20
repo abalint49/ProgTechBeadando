@@ -10,11 +10,7 @@ public class lesson {
 
     @Override
     public String toString() {
-        return  "id=" + id +
-                ", teacherId=" + teacherId +
-                ", tessonName='" + lessonName + '\'' +
-                ", location='" + location + '\'' +
-                ", time='" + time + '\'';
+        return " " + id + ", " + lessonName + " (" + LoginForm.users.GetUserFromId(teacherId) + ") - " + location + ", " + time;
     }
 
     public lesson(int id, int teacherId, String lessonName, String location, String time) {
