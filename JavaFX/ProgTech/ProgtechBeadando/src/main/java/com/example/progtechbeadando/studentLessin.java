@@ -13,7 +13,8 @@ public class studentLessin {
 
     @Override
     public String toString() {
-        return "lessonName='" + lessonName + '\'' +
+        return "id='" + lessonId + '\'' +
+                ", lessonName='" + lessonName + '\'' +
                 ", teacherName='" + teacherName + '\'' +
                 ", location='" + location + '\'' +
                 ", time='" + time + '\'';

@@ -39,7 +39,7 @@ public class studentLessins {
         for (int i = 0; i < lessonIds.size(); i++)
         {
             lesson CLesson = LoginController.lessons.GetLessonFromId(lessonIds.get(i));
-            LessonList.add(new studentLessin(i,CLesson.lessonName, LoginController.users.GetUserFromId(CLesson.teacherId),CLesson.location,CLesson.time));
+            LessonList.add(new studentLessin(lessonIds.get(i),CLesson.lessonName, LoginController.users.GetUserFromId(CLesson.teacherId),CLesson.location,CLesson.time));
         }
         Logger.Log("Evenet","Get Student Lessons");
     }

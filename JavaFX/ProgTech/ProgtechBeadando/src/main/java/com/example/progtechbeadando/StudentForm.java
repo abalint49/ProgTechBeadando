@@ -108,9 +108,12 @@ public class StudentForm extends Application {
     }
 
     public void TargyLeadas(ActionEvent actionEvent) {
-        System.out.println(LoginForm.CurrentUser.id);
-        System.out.println(LoginForm.lessons.lessons.get(Slist.getSelectionModel().getSelectedIndex()).id);
-        studentLessins.DeleteStudentLesson(LoginForm.CurrentUser.id, LoginForm.lessons.lessons.get(Slist.getSelectionModel().getSelectedIndex()).id);
+
+
+        //System.out.println(LoginForm.CurrentUser.id);
+        int selectidId = Integer.parseInt(Slist.getSelectionModel().getSelectedItems().toString().split("=")[1].split("'")[1]);
+        System.out.println(selectidId);
+        studentLessins.DeleteStudentLesson(LoginForm.CurrentUser.id, selectidId);
 
         Frissit();
     }
