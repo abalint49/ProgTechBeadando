@@ -14,7 +14,7 @@ import java.io.IOException;
 public class LoginController {
     static public Users users = new Users();
     static public Lessons lessons = new Lessons();
-    static public studentLessins StudentLessons = new studentLessins();
+    //static public studentLessins StudentLessons = new studentLessins();
     public PasswordField LoginJelszoBox;
     public TextField LoginNeptunBox;
     public static Parent root;

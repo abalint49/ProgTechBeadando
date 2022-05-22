@@ -33,7 +33,7 @@ public class StudentForm extends Application {
     public void startS() {
     if (!betoltve)
         {
-        studentLessins.GetStudentLessons(LoginForm.CurrentUser.id);
+        StudentLessonProperty.GetStudentLessons(LoginForm.CurrentUser.id);
         Frissit();
         Slist.refresh();
         betoltve=true;
@@ -53,14 +53,14 @@ public class StudentForm extends Application {
 
     public void TargyLeadas(ActionEvent actionEvent) {
         int selectidId = Integer.parseInt(Slist.getSelectionModel().getSelectedItems().toString().split(",")[0].split(" ")[1]);
-        studentLessins.DeleteStudentLesson(LoginForm.CurrentUser.id, selectidId);
+        StudentLessonProperty.DeleteStudentLesson(LoginForm.CurrentUser.id, selectidId);
         StudentLabel.setText("Tárgy leadva");
         Frissit();
     }
     public void Frissit()
     {
         Slist.getItems().clear();
-        studentLessins.GetStudentLessons(LoginForm.CurrentUser.id);
+        StudentLessonProperty.GetStudentLessons(LoginForm.CurrentUser.id);
         for (int i = 0; i < studentLessins.LessonList.size(); i++) {
             Slist.getItems().add(studentLessins.LessonList.get(i).toString());
         }

@@ -14,7 +14,7 @@ public class studentLessins {
 
     static ArrayList<studentLessin> LessonList = new ArrayList<studentLessin>();
 
-    public static void GetStudentLessons(int StudentId)
+    public void GetStudentLessons(int StudentId)
     {
         lessonIds = new ArrayList<>();
         try {
@@ -44,14 +44,14 @@ public class studentLessins {
         Logger.Log("Evenet","Get Student Lessons");
     }
 
-    public static void AddStudentLesson(int StrudentId, int LessontId)
+    public void AddStudentLesson(int StrudentId, int LessontId)
     {
         String sql = ("INSERT INTO `studenttolesson`(`studentid`, `lessonsid`) VALUES (" +  StrudentId + "," +  LessontId + ")");
         Sql.sqlWithoutResponse(sql);
         Logger.Log("Evenet","Add Student Lessons");
     }
 
-    public static void DeleteStudentLesson (int StrudentId, int LessontId)
+    public void DeleteStudentLesson (int StrudentId, int LessontId)
     {
         String sql = ("DELETE FROM `studenttolesson` WHERE `studentid` = " +  StrudentId + " AND `lessonsid` = " +  LessontId + "");
         Sql.sqlWithoutResponse(sql);

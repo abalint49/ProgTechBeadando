@@ -22,7 +22,7 @@ public class TeacherForm extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        studentLessins.GetStudentLessons(LoginForm.CurrentUser.id);
+        StudentLessonProperty.GetStudentLessons(LoginForm.CurrentUser.id);
     }
 
     public void CreateTargy(ActionEvent actionEvent) throws IOException {

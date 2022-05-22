@@ -35,7 +35,7 @@ public class Targyfelvetel extends Application {
     }
 
     public void Targyfelvetel(ActionEvent actionEvent) {
-        studentLessins.AddStudentLesson(LoginForm.CurrentUser.id, Lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).id);
+        StudentLessonProperty.AddStudentLesson(LoginForm.CurrentUser.id, Lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).id);
         targyfelvLabel.setText("Tárgy felvéve:\n" +
                 "ID: "+ Lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).id + "\n" +
                 "Kurzus neve: "+ Lessons.lessons.get(targyfelvList.getSelectionModel().getSelectedIndex()).lessonName + "\n" +
