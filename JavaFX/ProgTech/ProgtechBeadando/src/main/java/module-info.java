@@ -11,6 +11,8 @@ module com.example.progtechbeadando {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires junit;
+    requires org.testng;
 
     opens com.example.progtechbeadando to javafx.fxml;
     exports com.example.progtechbeadando;
