@@ -13,6 +13,7 @@ module com.example.progtechbeadando {
     requires java.sql;
     requires junit;
     requires org.testng;
+    requires java.security.jgss;
 
     opens com.example.progtechbeadando to javafx.fxml;
     exports com.example.progtechbeadando;

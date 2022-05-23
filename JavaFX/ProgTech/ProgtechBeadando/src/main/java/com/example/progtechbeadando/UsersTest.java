@@ -7,23 +7,21 @@ import static org.testng.Assert.assertNotNull;
 
 class UsersTest {
 
-    @Test
-    user login(String test, String s) {
-        user c = login("test" ,"test");
-        assertNotNull(c);
-        return c;
-    }
-
-    @Test
+    @org.junit.jupiter.api.Test
     void refressUser() {
         refressUser();
         assertNotEquals(null, LoginController.users);
     }
 
-    @Test
-    String getUserFromId(int i) {
-        String u = getUserFromId(0);
+    @org.junit.jupiter.api.Test
+    void testLogin() {
+        user c = LoginForm.users.login("test" ,"test");
+        assertNotNull(c);
+    }
+
+    @org.junit.jupiter.api.Test
+    void getUserFromId() {
+        String u = LoginForm.users.GetUserFromId(0);
         assertNotNull(u);
-        return u;
     }
 }
